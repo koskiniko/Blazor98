@@ -1,0 +1,68 @@
+﻿@using System.Text
+<div class="window" style="@GetStyles()">
+    <div class="title-bar">
+        <img src="@IconPath" height="14" style="margin-right:4px" />
+        <div class="title-bar-text">@Title</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-content-scroll" style="@GetHeight()">
+        <div class="window-body" >
+            @ChildContent
+        </div>
+    </div>
+    
+    <div class="status-bar">
+        <p class="status-bar-field">Press F1 for help</p>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? IconPath { get; set; }
+
+    [Parameter]
+    public int? MinWidth { get; set; }
+
+    [Parameter]
+    public int? Width { get; set; }
+
+    [Parameter]
+    public int? Height { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    public string GetHeight()
+    {
+        var styles = new StringBuilder();
+
+        if (Height != null)
+            styles.Append($"max-height: {Height}px;");
+
+        return styles.ToString();
+    }
+
+    public string GetStyles()
+    {
+        var styles = new StringBuilder();
+
+        if (MinWidth != null)
+            styles.Append($"min-width: {MinWidth}px;");
+
+        if (Width != null)
+            styles.Append($"width: {Width}px;");
+
+        return styles.ToString();
+    }
+}

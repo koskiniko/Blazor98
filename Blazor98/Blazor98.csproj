@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Blazor98</Title>
+    <Authors>Niko Koski</Authors>
+    <Description>Blazor98 is a .NET 10 Blazor extension designed to provide a consistent, maintainable, and enterprise‑ready UI framework for modern web applications. It focuses on stability, predictable behavior, and long‑term support, making it suitable for business‑critical solutions.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/koskiniko/Blazor98</PackageProjectUrl>
+    <Copyright>Copyright (c) Niko Koski 2025</Copyright>
+    <RepositoryUrl>https://github.com/koskiniko/Blazor98</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>blazor98_128.png</PackageIcon>
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\blazor98_128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>

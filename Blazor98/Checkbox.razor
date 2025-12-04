@@ -1,0 +1,13 @@
+﻿<input type="checkbox" id="@_checkbox" checked="@IsChecked">
+<label for="@_checkbox">@Label</label>
+
+@code {
+
+    private Guid _checkbox = Guid.NewGuid();
+
+    [Parameter]
+    public string Label { get; set; } = "This is a checkbox";
+
+    [Parameter]
+    public bool IsChecked { get; set; }
+}

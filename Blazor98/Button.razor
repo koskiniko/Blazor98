@@ -1,0 +1,11 @@
+﻿<button class="@Default ? true : false">
+    @ChildContent
+</button>
+
+@code {
+    [Parameter]
+    public bool Default { get; set; } = false;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+}

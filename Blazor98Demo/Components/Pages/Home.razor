@@ -1,0 +1,57 @@
+﻿@page "/"
+@using Blazor98Demo.Data;
+@using Blazor98
+
+<PageTitle>Home</PageTitle>
+
+<Window Title="Blazor98 GroupBox" Width="500">
+    <GroupBox Title="Title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </GroupBox>
+</Window>
+
+<Window Title="Blazor98 TableTemplate" Width="300">
+    <TableTemplate Items="Cars" Context="car">
+        <TableHeader>
+            <th>Manufacturer</th>
+            <th>Model</th>
+        </TableHeader>
+        <RowTemplate>
+            <td>@car.Manufacturer</td>
+            <td>@car.Model</td>
+        </RowTemplate>
+    </TableTemplate>
+</Window>
+
+<Window Title="Blazor98 TabPanel" Width="300">
+    <TabPanel>
+        <Tab Title="First tab">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        </Tab>
+        <Tab Title="Second tab">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        </Tab>
+    </TabPanel>
+</Window>
+
+<Window Title="Blazor98 Loading" Width="300">
+    <Loading />
+</Window>
+
+<Window Title="Blazor98 Button" Width="300">
+    <Button>LOL</Button>
+</Window>
+
+<Window Title="Blazor98 Checkbox" Width="300">
+    <Checkbox Label="Check me!" />
+    <Checkbox Label="I'm checked'" IsChecked="true" />
+</Window>
+
+<Window Title="Blazor98 TextBox" Width="300">
+    <TextBox Label="Yo this is label" />
+</Window>
+
+
+@code {
+    public List<Car> Cars { get; set; } = [new Car("Mitsubishi", "Grandis"), new Car("Hyundai", "Getz"), new Car("Mitsubishi", "Charisma"), new Car("Nissan", "Qashqai")];
+}

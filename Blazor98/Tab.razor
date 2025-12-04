@@ -1,0 +1,33 @@
+
+<li role="tab" class="tab" aria-selected="@IsSelected()" @onclick="() => ActivatePage(this)">
+    <a href="">@Title</a>
+</li>
+@code {
+    [CascadingParameter]
+    public TabPanel Parent { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+    [Parameter]
+    public string Title { get; set; } = null!;
+
+    public event EventHandler TabSelected;
+
+    /// <inheritdoc />
+    protected override void OnInitialized()
+    {
+        if (Parent == null)
+            throw new ArgumentNullException(nameof(Parent), "TabPage must exist within a TabControl");
+
+        base.OnInitialized();
+        Parent.AddPage(this);
+    }
+
+    void ActivatePage(Tab tab) {
+        Parent.ActiveTab = tab;
+        TabSelected?.Invoke(this, EventArgs.Empty);
+    }
+
+    string IsSelected() => Parent.ActiveTab == this ? "true" : "false";
+}

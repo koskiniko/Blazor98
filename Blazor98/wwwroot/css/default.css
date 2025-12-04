@@ -1,0 +1,104 @@
+﻿#blazor-error-ui {
+    display: none;
+    background-color: #0000aa;
+    background-image: url(../images/bsod.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    height: 100vh;
+    width: 100vw;
+}
+
+    #blazor-error-ui .reload {
+        height: 100vh;
+        width: 100vw;
+        display: block;
+    }
+
+.content {
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    /*flex-wrap: wrap;*/
+    gap: 20px;
+}
+
+.left-column {
+}
+
+.right-column {
+    flex: 100%;
+}
+
+    .right-column .window:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+/*fieldset {
+    height: 100%;
+}*/
+
+table td:last-child {
+    width: 100%;
+}
+
+fieldset {
+    margin: 10px 0px 10px 0px;
+}
+
+.window {
+    height: fit-content;
+    /*min-width: 400px;*/
+    /*flex-grow: 1;*/
+}
+
+.window-content-scroll {
+    overflow: auto;
+    /*max-height: 90vh;*/
+    max-height: 80vh;
+    /*height: 90vmin;*/
+}
+
+.icon {
+    height: 16px;
+    padding-right: 5px;
+}
+
+.task-bar {
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-image: url(../images/clock.png), url(../images/startmenu.png), url(../images/menubar.png);
+    background-position: bottom right 5px, bottom left 5px, bottom;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-attachment: fixed;
+}
+
+/*.tab {
+    display:flex;
+    align-items:baseline;
+}*/
+
+.title-bar {
+    cursor: default;
+    justify-content: normal;
+    /*padding: 0px 3px 0px 3px;*/
+}
+
+.title-bar-controls {
+    margin-left: auto;
+}
+
+body {
+    background-color: #00807F;
+    background-image: url(../images/background-contents.png);
+    background-position: top left 5px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

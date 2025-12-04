@@ -1,0 +1,42 @@
+<menu role="tablist">
+    <CascadingValue Value="this">
+        @ChildContent
+    </CascadingValue>
+</menu>
+
+<div class="window" role="tabpanel">
+    <div class="window-body">
+        @ActiveTab?.ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+    [Parameter]
+    public List<Tab> Tabs { get; set; } = [];
+
+    public Tab? ActiveTab { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        ActiveTab = Tabs.FirstOrDefault();
+    }
+
+    void ActivatePage(object sender, EventArgs e)
+    {
+        ActiveTab = (Tab)sender;
+        StateHasChanged();
+    }
+    internal void AddPage(Tab tab)
+    {
+        Tabs.Add(tab);
+        if (Tabs.Count == 1)
+            ActiveTab = tab;
+
+        tab.TabSelected += ActivatePage;
+
+        StateHasChanged();
+    }
+}

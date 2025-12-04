@@ -1,0 +1,11 @@
+﻿<div class="field-row">
+    <label for="_id">@Label</label>
+    <input id="_id" type="text" />
+</div>
+
+@code {
+    private Guid _id = Guid.NewGuid();
+
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+}
